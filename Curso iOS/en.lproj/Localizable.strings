@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  Curso iOS
+
+  Created by Paco Toro on 11/4/17.
+  Copyright © 2017 Unicaja. All rights reserved.
+*/
+
+"TextoComun_Aceptar" = "OK";
+"TextoComun_Aceptar" = "Cancel";
+"TextoComun_Aviso" = "Warning";
+"TextoComun_Error" = "Error";
+
+"LoginViewController_Ha alcanzdo el número máximo..." = "You have reached the maximum number of failed attempts, so access has been blocked. Contact your office.";
+"LoginViewController_Acceso autorizado" = "Authorized access";
+"LoginViewController_Las credenciales introducidas no son válidas." = "The credentials entered are invalid. Review them and try again. You have %d left.";
+"LoginViewController_Bienvenido" = "Wellcome %@.";
