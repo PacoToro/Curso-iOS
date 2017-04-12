@@ -8,6 +8,9 @@
 
 "TextoComun_Aceptar" = "Aceptar";
 "TextoComun_Aceptar" = "Cancelar";
+"TextoComun_Sí" = "Sí";
+"TextoComun_No" = "No";
+"TextoComun_Información" = "Información";
 "TextoComun_Aviso" = "Aviso";
 "TextoComun_Error" = "Error";
 
@@ -15,3 +18,9 @@
 "LoginViewController_Acceso autorizado" = "Acceso autorizado";
 "LoginViewController_Las credenciales introducidas no son válidas." = "Las credenciales introducidas no son válidas. Revíselas e inténtelo de nuevo. Le quedan %d intentos.";
 "LoginViewController_Bienvenido" = "Bienvenido %@.";
+
+"Utils_Se ha detectado que no tiene instalada la aplicación" = "Se ha detectado que no tiene instalada la aplicación %@. ¿Desea instalarla gratuitamente?";
+
+"WebViewController_Se ha producido un error al cargar la página." = "Se ha producido un error al cargar la página.";
+
+

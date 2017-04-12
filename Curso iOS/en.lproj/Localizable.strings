@@ -8,6 +8,9 @@
 
 "TextoComun_Aceptar" = "OK";
 "TextoComun_Aceptar" = "Cancel";
+"TextoComun_Sí" = "Yes";
+"TextoComun_No" = "No";
+"TextoComun_Información" = "Information";
 "TextoComun_Aviso" = "Warning";
 "TextoComun_Error" = "Error";
 
@@ -15,3 +18,7 @@
 "LoginViewController_Acceso autorizado" = "Authorized access";
 "LoginViewController_Las credenciales introducidas no son válidas." = "The credentials entered are invalid. Review them and try again. You have %d left.";
 "LoginViewController_Bienvenido" = "Wellcome %@.";
+
+"Utils_Se ha detectado que no tiene instalada la aplicación" = "It has been detected that you do not have the %@ application installed. Do you want to install it for free?";
+
+"WebViewController_Se ha producido un error al cargar la página." = "There was an error loading the page.";

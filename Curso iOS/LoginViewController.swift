@@ -44,8 +44,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                          mensaje: String(format: NSLocalizedString("LoginViewController_Las credenciales introducidas no son válidas.",
                                                                    comment: ""),
                                          maxNumIntentos - numIntentosConsumidos ))
-            
-            // maxNumIntentos - numIntentosConsumidos
             defaults.set(numIntentosConsumidos + 1, forKey: numIntentosKey)
         }
     }
@@ -106,6 +104,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         scrollView.scrollIndicatorInsets = UIEdgeInsets.zero
     }
     
+    //MARK: - UITextFieldDelegate
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true

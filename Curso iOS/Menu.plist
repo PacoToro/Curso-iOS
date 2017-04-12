@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>tipo</key>
+		<string>web</string>
+		<key>titulo_es</key>
+		<string>Conoce Ingenia</string>
+		<key>titulo_en</key>
+		<string>Get to know Ingenia</string>
+		<key>subtitulo_es</key>
+		<string>Entra en nuestra web para conocer lo que podemos hacer por ti</string>
+		<key>subtitulo_en</key>
+		<string>Enter our website to know what we can do for you</string>
+		<key>imagen</key>
+		<string>menu-ingenia</string>
+		<key>url_es</key>
+		<string>http://www.ingenia.es/es</string>
+		<key>url_en</key>
+		<string>http://www.ingenia.es/en</string>
+	</dict>
+	<dict>
+		<key>tipo</key>
+		<string>web</string>
+		<key>titulo_es</key>
+		<string>Ingenia en Twitter</string>
+		<key>titulo_en</key>
+		<string>Ingenia in Twitter</string>
+		<key>subtitulo_es</key>
+		<string>Síguenos en Twitter y te mantendremos al día de nuestras novedades</string>
+		<key>subtitulo_en</key>
+		<string>Follow us on Twitter and we will keep you up to date with our news</string>
+		<key>imagen</key>
+		<string>menu-twitter</string>
+		<key>url_es</key>
+		<string>https://twitter.com/ingenia_es?lang=es</string>
+		<key>url_en</key>
+		<string>https://twitter.com/ingenia_es?lang=en</string>
+	</dict>
+	<dict>
+		<key>tipo</key>
+		<string>web</string>
+		<key>titulo_es</key>
+		<string>Ingenia en Facebook</string>
+		<key>titulo_en</key>
+		<string>Ingenia in Facebook</string>
+		<key>subtitulo_es</key>
+		<string>Síguenos en Facebook y te mantendremos al día de nuestras novedades</string>
+		<key>subtitulo_en</key>
+		<string>Follow us on Facebook and we will keep you updated on our news</string>
+		<key>imagen</key>
+		<string>menu-facebook</string>
+		<key>url_es</key>
+		<string>https://es-es.facebook.com/ingeniaface/</string>
+		<key>url_en</key>
+		<string>https://en-gb.facebook.com/ingeniaface/</string>
+	</dict>
+	<dict>
+		<key>tipo</key>
+		<string>web</string>
+		<key>titulo_es</key>
+		<string>Ingenia en Youtube</string>
+		<key>titulo_en</key>
+		<string>Ingenia in Youtube</string>
+		<key>subtitulo_es</key>
+		<string>Síguenos en YouTube y te mantendremos al día de nuestras novedades</string>
+		<key>subtitulo_en</key>
+		<string>Follow us on YouTube and we will keep you updated on our news</string>
+		<key>imagen</key>
+		<string>menu-youtube</string>
+		<key>url_es</key>
+		<string>https://www.youtube.com/user/Ingeniacanaltv</string>
+		<key>url_en</key>
+		<string>https://www.youtube.com/user/Ingeniacanaltv</string>
+	</dict>
+	<dict>
+		<key>tipo</key>
+		<string>app</string>
+		<key>titulo_es</key>
+		<string>EURO6000</string>
+		<key>titulo_en</key>
+		<string>EURO6000</string>
+		<key>subtitulo_es</key>
+		<string>Consulta nuestra red de cajeros</string>
+		<key>subtitulo_en</key>
+		<string>Check our network of ATMs</string>
+		<key>imagen</key>
+		<string>menu-EURO6000</string>
+		<key>nombreApp</key>
+		<string>EURO6000</string>
+		<key>urlScheme</key>
+		<string>EURO6000://?MENUPRIVILEGIOS#unicajamovil://</string>
+		<key>urlStore</key>
+		<string>http://itunes.apple.com/es/app/euro-6000/id398679203?mt=8</string>
+	</dict>
+	<dict>
+		<key>tipo</key>
+		<string>app</string>
+		<key>titulo_es</key>
+		<string>¿Donde estamos?</string>
+		<key>titulo_en</key>
+		<string>Where we are?</string>
+		<key>subtitulo_es</key>
+		<string>Ven a visitarnos, te indicaremos como llegar</string>
+		<key>subtitulo_en</key>
+		<string>Come visit us, we will tell you how to get there</string>
+		<key>imagen</key>
+		<string>menu-mapas</string>
+		<key>nombreApp</key>
+		<string>Mapas</string>
+		<key>urlScheme</key>
+		<string>http://maps.apple.com/?q=Ingenia&amp;address=Severo+Ochoa,43,29590,Malaga,Spain</string>
+		<key>urlStore</key>
+		<string>https://www.apple.com/es/ios/maps/</string>
+	</dict>
+</array>
+</plist>

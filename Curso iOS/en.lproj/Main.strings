@@ -10,3 +10,6 @@
 
 /* Class = "UITextField"; placeholder = "Identificador"; ObjectID = "g67-g4-kUh"; */
 "g67-g4-kUh.placeholder" = "User";
+
+/* Class = "UIBarButtonItem"; title = "Cerrar"; ObjectID = "ME5-Wv-RPA"; */
+"ME5-Wv-RPA.title" = "Cerrar";
