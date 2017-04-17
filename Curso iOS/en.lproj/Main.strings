@@ -1,6 +1,6 @@
 
 /* Class = "UILabel"; text = "Bienvenido a Ingenia Bank. Introduzca su identificador y su contraseña para acceder."; ObjectID = "2Vt-h0-wVf"; */
-"2Vt-h0-wVf.text" = "Wellcome to Ingenia Bank. Enter your login and password to access.";
+"2Vt-h0-wVf.text" = "Enter your login and password to access.";
 
 /* Class = "UITextField"; placeholder = "Contraseña"; ObjectID = "E4X-AE-WBF"; */
 "E4X-AE-WBF.placeholder" = "Password";

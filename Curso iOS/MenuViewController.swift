@@ -1,5 +1,5 @@
 //
-//  MenuPrincipalViewController.swift
+//  MenuViewController.swift
 //  Curso iOS
 //
 //  Created by Paco Toro on 12/4/17.
@@ -8,11 +8,17 @@
 
 import UIKit
 
-class MenuPrincipalViewController: UITableViewController, LoginDelegate {
-   var menuArray: [Dictionary<String, Any>] = []
+class MenuViewController: UITableViewController, LoginDelegate {
+   
+    typealias tipoMenu = [Dictionary<String, Any>]
+    
+    var menuArray: tipoMenu = []
+    let sufijoIdima = "_" + Utils.idioma()
+    
+    @IBOutlet weak var btnDesconectar: UIBarButtonItem!
     
     override func viewDidLoad() {
-        if let fileUrl = Bundle.main.url(forResource: "Menu", withExtension: "plist") {
+        if menuArray.count == 0, let fileUrl = Bundle.main.url(forResource: "Menu", withExtension: "plist") {
             do {
                 let data = try Data(contentsOf: fileUrl)
                 menuArray = try PropertyListSerialization.propertyList(from: data, options: [], format: nil) as! [[String: Any]]
@@ -22,6 +28,12 @@ class MenuPrincipalViewController: UITableViewController, LoginDelegate {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let defaults = UserDefaults.standard
+        btnDesconectar.isEnabled = defaults.string(forKey: "token") != nil
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return menuArray.count
     }
@@ -29,11 +41,18 @@ class MenuPrincipalViewController: UITableViewController, LoginDelegate {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MenuCell", for: indexPath) as! MenuCell
         let opcion = menuArray[indexPath.row]
-        let sufijoIdima = "_" + Utils.idioma()
         
         cell.lblTitulo.text =  opcion["titulo" + sufijoIdima] as? String
         cell.lblSubtitulo.text =  opcion["subtitulo" + sufijoIdima] as? String
-        cell.imgIcono.image = UIImage (named: opcion["imagen"] as! String)
+        if let imageName = opcion["imagen"] {
+            cell.imgIcono.image = UIImage (named: imageName as! String)
+        }
+        
+        if let tipo = opcion["tipo"] as? String, tipo == "menu" {
+            cell.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
+        } else {
+            cell.accessoryType = UITableViewCellAccessoryType.none
+        }
         
         return cell
     }
@@ -50,6 +69,13 @@ class MenuPrincipalViewController: UITableViewController, LoginDelegate {
         
         if let tipo = opcion["tipo"] as? String {
             switch tipo {
+            case "menu":
+                let submenu = opcion["menu"] as! tipoMenu
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let controller = storyboard.instantiateViewController(withIdentifier: "MenuViewController") as! MenuViewController
+                controller.menuArray = submenu
+                controller.title = opcion["titulo" + sufijoIdima] as? String
+                navigationController?.pushViewController(controller, animated: true)
             case "web":
                 let sufijoIdima = "_" + Utils.idioma()
                 let urlIdioma = opcion["url" + sufijoIdima]
@@ -97,6 +123,14 @@ class MenuPrincipalViewController: UITableViewController, LoginDelegate {
                 tableView(tableView, didSelectRowAt: indexPath)
             }
         }
+        
+        btnDesconectar.isEnabled = estaAutenticado
     }
     
+    @IBAction func desconectar(_ sender: Any) {
+        btnDesconectar.isEnabled = false
+        let defaults = UserDefaults.standard
+        defaults.removeObject(forKey: "token")
+        navigationController?.popToRootViewController(animated: true)
+    }
 }
