@@ -3,6 +3,8 @@
 <plist version="1.0">
 <array>
 	<dict>
+		<key>autenticado</key>
+		<true/>
 		<key>tipo</key>
 		<string>web</string>
 		<key>titulo_es</key>
@@ -97,6 +99,8 @@
 	<dict>
 		<key>tipo</key>
 		<string>app</string>
+		<key>autenticado</key>
+		<false/>
 		<key>titulo_es</key>
 		<string>¿Donde estamos?</string>
 		<key>titulo_en</key>

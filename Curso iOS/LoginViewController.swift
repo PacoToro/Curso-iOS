@@ -8,8 +8,13 @@
 
 import UIKit
 
+protocol LoginDelegate: class {
+    func usuarioAutenticado(estaAutenticado:Bool)
+}
+
 class LoginViewController: UIViewController, UITextFieldDelegate {
 
+    var delegate:LoginDelegate?
     let numIntentosKey = "numIntentosDisponibles"
     let maxNumIntentos = 3
     let datosAcceso = (nombre: "Fernando", usuario: "fernan2", contraseña: "invitado")
@@ -32,13 +37,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                          mensaje: NSLocalizedString("LoginViewController_Ha alcanzdo el número máximo...",
                                                     comment: ""))
         } else if txtIdentificador.text == datosAcceso.usuario && txtContraseña.text == datosAcceso.contraseña {
-            
             defaults.set(0, forKey: numIntentosKey)
-            muestraAviso(titulo: NSLocalizedString("LoginViewController_Acceso autorizado",
-                                                   comment: ""),
-                         mensaje: String(format: NSLocalizedString("LoginViewController_Bienvenido",
-                                                                   comment: ""),
-                                         datosAcceso.nombre))
+            let defaults = UserDefaults.standard
+            defaults.set("ger9sfgh934gdfg3$Gsdg3g", forKey: "token")
+            defaults.set("Walter White", forKey: "nombre")
+            delegate?.usuarioAutenticado(estaAutenticado: true)
         } else {
             muestraAviso(titulo: NSLocalizedString("TextoComun_Aviso", comment: ""),
                          mensaje: String(format: NSLocalizedString("LoginViewController_Las credenciales introducidas no son válidas.",
@@ -46,6 +49,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                                          maxNumIntentos - numIntentosConsumidos ))
             defaults.set(numIntentosConsumidos + 1, forKey: numIntentosKey)
         }
+    }
+    
+    @IBAction func pulsaCancelar(_ sender: Any) {
+        delegate?.usuarioAutenticado(estaAutenticado: false)
     }
     
     override func viewDidLoad() {
@@ -109,5 +116,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
+    
+    
 }
 

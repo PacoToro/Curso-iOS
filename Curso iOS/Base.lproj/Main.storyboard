@@ -6,14 +6,13 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="Curso_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="LoginViewController" customModule="Curso_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -26,7 +25,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fkE-46-dbv">
-                                        <rect key="frame" x="16" y="20" width="288" height="292"/>
+                                        <rect key="frame" x="16" y="20" width="288" height="312"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bienvenido a Ingenia Bank. Introduzca su identificador y su contraseña para acceder." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Vt-h0-wVf">
                                                 <rect key="frame" x="0.5" y="111" width="288" height="45"/>
@@ -69,36 +68,66 @@
                                                     <outlet property="delegate" destination="BYZ-38-t0r" id="ovc-IY-Vng"/>
                                                 </connections>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SsB-nk-4zX">
-                                                <rect key="frame" x="93.5" y="252" width="100" height="32"/>
-                                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nr0-ex-2DI">
+                                                <rect key="frame" x="24" y="260" width="240" height="32"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FqZ-Yi-RoA">
+                                                        <rect key="frame" x="140" y="0.0" width="100" height="32"/>
+                                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="100" id="JEM-Bc-rOP"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                        <state key="normal" title="Cancelar"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="pulsaCancelar:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bGl-Wl-oex"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SsB-nk-4zX">
+                                                        <rect key="frame" x="0.0" y="0.0" width="100" height="32"/>
+                                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="100" id="7wp-Bw-3Gx"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                        <state key="normal" title="Entrar"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="pulsaEntrar:" destination="BYZ-38-t0r" eventType="touchUpInside" id="h0M-pj-jJh"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="100" id="7wp-Bw-3Gx"/>
-                                                    <constraint firstAttribute="height" constant="32" id="GQt-AV-6pX"/>
+                                                    <constraint firstItem="SsB-nk-4zX" firstAttribute="leading" secondItem="nr0-ex-2DI" secondAttribute="leading" id="3wD-Bs-jtV"/>
+                                                    <constraint firstAttribute="bottom" secondItem="SsB-nk-4zX" secondAttribute="bottom" id="7IU-LS-TRp"/>
+                                                    <constraint firstItem="FqZ-Yi-RoA" firstAttribute="top" secondItem="nr0-ex-2DI" secondAttribute="top" id="Cm7-Qy-EAM"/>
+                                                    <constraint firstAttribute="width" constant="240" id="Dew-Oc-5ik"/>
+                                                    <constraint firstItem="SsB-nk-4zX" firstAttribute="top" secondItem="nr0-ex-2DI" secondAttribute="top" id="I1u-ol-mKu"/>
+                                                    <constraint firstAttribute="bottom" secondItem="FqZ-Yi-RoA" secondAttribute="bottom" id="V9u-AM-I3V"/>
+                                                    <constraint firstAttribute="trailing" secondItem="FqZ-Yi-RoA" secondAttribute="trailing" id="baf-8Z-bno"/>
+                                                    <constraint firstAttribute="height" constant="32" id="jNN-lG-3on"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                                <state key="normal" title="Entrar"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="pulsaEntrar:" destination="BYZ-38-t0r" eventType="touchUpInside" id="h0M-pj-jJh"/>
-                                                </connections>
-                                            </button>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="b1j-tt-H3B" firstAttribute="centerX" secondItem="fkE-46-dbv" secondAttribute="centerX" id="2ug-HX-Uc5"/>
                                             <constraint firstItem="E4X-AE-WBF" firstAttribute="top" secondItem="g67-g4-kUh" secondAttribute="bottom" constant="16" id="5vw-Zn-VnE"/>
+                                            <constraint firstItem="nr0-ex-2DI" firstAttribute="centerX" secondItem="fkE-46-dbv" secondAttribute="centerX" id="Kab-dd-hjR"/>
+                                            <constraint firstItem="nr0-ex-2DI" firstAttribute="top" secondItem="E4X-AE-WBF" secondAttribute="bottom" constant="20" id="Ozv-us-sj3"/>
                                             <constraint firstItem="g67-g4-kUh" firstAttribute="top" secondItem="2Vt-h0-wVf" secondAttribute="bottom" constant="8" symbolic="YES" id="SIQ-Vd-ybe"/>
                                             <constraint firstItem="b1j-tt-H3B" firstAttribute="top" secondItem="fkE-46-dbv" secondAttribute="top" id="UXO-ST-mgv"/>
                                             <constraint firstItem="2Vt-h0-wVf" firstAttribute="centerX" secondItem="fkE-46-dbv" secondAttribute="centerX" id="Vzh-yv-AWE"/>
                                             <constraint firstItem="2Vt-h0-wVf" firstAttribute="top" secondItem="b1j-tt-H3B" secondAttribute="bottom" constant="8" id="Yjs-g8-CdM"/>
                                             <constraint firstItem="E4X-AE-WBF" firstAttribute="centerX" secondItem="fkE-46-dbv" secondAttribute="centerX" id="abT-Jp-HBF"/>
                                             <constraint firstItem="g67-g4-kUh" firstAttribute="centerX" secondItem="fkE-46-dbv" secondAttribute="centerX" id="ccB-kd-6as"/>
-                                            <constraint firstItem="SsB-nk-4zX" firstAttribute="bottom" secondItem="fkE-46-dbv" secondAttribute="bottomMargin" id="gcP-7p-NNb"/>
-                                            <constraint firstItem="SsB-nk-4zX" firstAttribute="centerX" secondItem="fkE-46-dbv" secondAttribute="centerX" id="j6F-3s-bCy"/>
-                                            <constraint firstAttribute="height" constant="292" id="lao-RB-x7n"/>
+                                            <constraint firstAttribute="height" constant="312" id="lao-RB-x7n"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -107,7 +136,7 @@
                                     <constraint firstItem="fkE-46-dbv" firstAttribute="top" secondItem="A1B-Gy-jBG" secondAttribute="top" constant="20" id="415-tN-tU1"/>
                                     <constraint firstItem="fkE-46-dbv" firstAttribute="leading" secondItem="A1B-Gy-jBG" secondAttribute="leading" constant="16" id="83A-ea-3dy"/>
                                     <constraint firstAttribute="trailing" secondItem="fkE-46-dbv" secondAttribute="trailing" constant="16" id="P4V-Eg-4Er"/>
-                                    <constraint firstAttribute="bottom" secondItem="fkE-46-dbv" secondAttribute="bottom" id="sRZ-CQ-6X2"/>
+                                    <constraint firstAttribute="bottom" secondItem="fkE-46-dbv" secondAttribute="bottom" constant="148" id="sRZ-CQ-6X2"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -132,7 +161,7 @@
         <!--Menu Principal View Controller-->
         <scene sceneID="mZy-Gq-uau">
             <objects>
-                <tableViewController id="LKJ-OF-k8I" customClass="MenuPrincipalViewController" customModule="Curso_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="MenuPrincipalViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="LKJ-OF-k8I" customClass="MenuPrincipalViewController" customModule="Curso_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="66" sectionHeaderHeight="28" sectionFooterHeight="28" id="mT7-8o-8j9">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
