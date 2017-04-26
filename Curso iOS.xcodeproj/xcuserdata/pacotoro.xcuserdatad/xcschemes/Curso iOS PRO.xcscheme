@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "19D939B41E9CAE66007E76A9"
-               BuildableName = "Curso iOS.app"
-               BlueprintName = "Curso iOS"
+               BuildableName = "Curso iOS PRO.app"
+               BlueprintName = "Curso iOS PRO"
                ReferencedContainer = "container:Curso iOS.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -33,8 +33,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "19D939B41E9CAE66007E76A9"
-            BuildableName = "Curso iOS.app"
-            BlueprintName = "Curso iOS"
+            BuildableName = "Curso iOS PRO.app"
+            BlueprintName = "Curso iOS PRO"
             ReferencedContainer = "container:Curso iOS.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -56,8 +56,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "19D939B41E9CAE66007E76A9"
-            BuildableName = "Curso iOS.app"
-            BlueprintName = "Curso iOS"
+            BuildableName = "Curso iOS PRO.app"
+            BlueprintName = "Curso iOS PRO"
             ReferencedContainer = "container:Curso iOS.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -75,8 +75,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "19D939B41E9CAE66007E76A9"
-            BuildableName = "Curso iOS.app"
-            BlueprintName = "Curso iOS"
+            BuildableName = "Curso iOS PRO.app"
+            BlueprintName = "Curso iOS PRO"
             ReferencedContainer = "container:Curso iOS.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

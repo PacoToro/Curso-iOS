@@ -63,8 +63,16 @@ class Utils {
         return (isReachable && !needsConnection)
     }
     
+    static func entornoPRO() -> Bool {
+#if ENTORNOPRO
+        return true
+#else
+        return false
+#endif
+    }
+
     static func endPoint() -> String {
-        return "192.168.18.173"
+        return entornoPRO() ? "ingenia.es" : "192.168.18.173"
     }
     
 }
