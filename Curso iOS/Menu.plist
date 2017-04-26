@@ -187,9 +187,9 @@
 		<key>titulo_en</key>
 		<string>EURO6000</string>
 		<key>subtitulo_es</key>
-		<string>Consulta nuestra red de cajeros</string>
+		<string>Consulta los privilegios de pertenecer a la red EURO6000</string>
 		<key>subtitulo_en</key>
-		<string>Check our network of ATMs</string>
+		<string>Check the privileges to belong to the EURO6000 network</string>
 		<key>imagen</key>
 		<string>menu-EURO6000</string>
 		<key>nombreApp</key>
@@ -220,6 +220,42 @@
 		<string>http://maps.apple.com/?q=Ingenia&amp;address=Severo+Ochoa,43,29590,Malaga,Spain</string>
 		<key>urlStore</key>
 		<string>https://www.apple.com/es/ios/maps/</string>
+	</dict>
+	<dict>
+		<key>tipo</key>
+		<string>operación</string>
+		<key>autenticado</key>
+		<false/>
+		<key>titulo_es</key>
+		<string>Oficinas y Cajeros</string>
+		<key>titulo_en</key>
+		<string>Offices and ATMs</string>
+		<key>subtitulo_es</key>
+		<string>Consulta nuestra red de oficinas y cajeros</string>
+		<key>subtitulo_en</key>
+		<string>Consult our network of offices and ATMs</string>
+		<key>imagen</key>
+		<string>menu-oficinas</string>
+		<key>segue</key>
+		<string>OficinasCajerosSegue</string>
+	</dict>
+	<dict>
+		<key>tipo</key>
+		<string>operación</string>
+		<key>autenticado</key>
+		<false/>
+		<key>titulo_es</key>
+		<string>Datos de contacto</string>
+		<key>titulo_en</key>
+		<string>Contact information</string>
+		<key>subtitulo_es</key>
+		<string>Contacta con nosotros fácilmente</string>
+		<key>subtitulo_en</key>
+		<string>Contact us easily</string>
+		<key>imagen</key>
+		<string>menu-contacto</string>
+		<key>segue</key>
+		<string>ContactoSegue</string>
 	</dict>
 </array>
 </plist>

@@ -23,4 +23,16 @@
 
 "WebViewController_Se ha producido un error al cargar la página." = "Se ha producido un error al cargar la página.";
 
+"ContactoViewController_No es posible enviar correos en este momento. Configure una cuenta y vuelva a intentarlo." = "No es posible enviar correos en este momento. Configure una cuenta y vuelva a intentarlo.";
+"ContactoViewController_Consulta desde la App" = "Consulta desde la App";
+"ContactoViewController_Hola, tengo la siguiente consulta: ..." =  "Hola, tengo la siguiente consulta: ...";
+"ContactoViewController_Atención al cliente" = "Atención al cliente";
+"ContactoViewController_Servicion técnico" = "Servicion técnico";
+"ContactoViewController_Reclamaciones" = "Reclamaciones";
+"ContactoViewController_Devoluciones" = "Devoluciones";
+"ContactoViewController_Nuevos clientes" = "Nuevos clientes";
+"ContactoViewController_Recursos Humanos" = "Recursos Humanos";
+"ContactoViewController_Ofertas de empleo" = "Ofertas de empleo";
+"ContactoViewController_Denuncias" = "Denuncias";
+
 

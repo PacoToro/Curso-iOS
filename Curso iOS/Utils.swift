@@ -7,14 +7,16 @@
 //
 
 import UIKit
+import Foundation
+import SystemConfiguration
 
 class Utils {
     
     static func idioma() -> String {
-        let pre = Locale.current.languageCode ?? "es"
+        let idioma = Locale.current.languageCode ?? "es"
         
-        if pre == "en" {
-            return pre
+        if idioma == "en" {
+            return idioma
         } else {
             return "es"
         }
@@ -39,6 +41,30 @@ class Utils {
             alert.addAction(UIAlertAction(title: NSLocalizedString("TextoComun_No", comment:""), style: UIAlertActionStyle.cancel, handler: nil))
             sender.present(alert, animated: true, completion: nil)
         }
+    }
+    
+    static func isInternetAvailable() -> Bool {
+        var zeroAddress = sockaddr_in()
+        zeroAddress.sin_len = UInt8(MemoryLayout.size(ofValue: zeroAddress))
+        zeroAddress.sin_family = sa_family_t(AF_INET)
+        
+        let defaultRouteReachability = withUnsafePointer(to: &zeroAddress) {
+            $0.withMemoryRebound(to: sockaddr.self, capacity: 1) {zeroSockAddress in
+                SCNetworkReachabilityCreateWithAddress(nil, zeroSockAddress)
+            }
+        }
+        
+        var flags = SCNetworkReachabilityFlags()
+        if !SCNetworkReachabilityGetFlags(defaultRouteReachability!, &flags) {
+            return false
+        }
+        let isReachable = (flags.rawValue & UInt32(kSCNetworkFlagsReachable)) != 0
+        let needsConnection = (flags.rawValue & UInt32(kSCNetworkFlagsConnectionRequired)) != 0
+        return (isReachable && !needsConnection)
+    }
+    
+    static func endPoint() -> String {
+        return "192.168.18.173"
     }
     
 }

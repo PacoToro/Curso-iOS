@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16E195" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Cajero" representedClassName="Cajero" syncable="YES" codeGenerationType="class">
+        <attribute name="codigo" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="direccion" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="estado" attributeType="String" syncable="YES"/>
+        <attribute name="latitud" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="longitud" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="pertenece" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Oficina" inverseName="tiene" inverseEntity="Oficina" syncable="YES"/>
+    </entity>
+    <entity name="Oficina" representedClassName="Oficina" syncable="YES" codeGenerationType="class">
+        <attribute name="codigo" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="direccion" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="estado" attributeType="String" syncable="YES"/>
+        <attribute name="latitud" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="longitud" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="mail" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="telefono" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="tiene" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Cajero" inverseName="pertenece" inverseEntity="Cajero" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Cajero" positionX="-54" positionY="-45" width="128" height="133"/>
+        <element name="Oficina" positionX="-344" positionY="-51" width="128" height="163"/>
+    </elements>
+</model>

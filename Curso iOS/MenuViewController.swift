@@ -86,6 +86,10 @@ class MenuViewController: UITableViewController, LoginDelegate {
                     let urlStore = opcion["urlStore"] as? String {
                     Utils.abrirApp(nombre: nombreApp, urlScheme: urlScheme, urlStore: urlStore, sender: self)
                 }
+            case "operación":
+                if  let segue = opcion["segue"] as? String {
+                    performSegue(withIdentifier: segue, sender: self)
+                }
             default:
                 break
             }

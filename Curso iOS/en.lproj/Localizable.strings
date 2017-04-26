@@ -22,3 +22,16 @@
 "Utils_Se ha detectado que no tiene instalada la aplicación" = "It has been detected that you do not have the %@ application installed. Do you want to install it for free?";
 
 "WebViewController_Se ha producido un error al cargar la página." = "There was an error loading the page.";
+
+"ContactoViewController_No es posible enviar correos en este momento. Configure una cuenta y vuelva a intentarlo." = "It is not possible to send emails at this time. Set up an account and try again.";
+
+"ContactoViewController_Consulta desde la App" = "Query from de App";
+"ContactoViewController_Hola, tengo la siguiente consulta: ..." =  "Hello, I have the following query: ...";
+"ContactoViewController_Atención al cliente" = "Customer Support";
+"ContactoViewController_Servicion técnico" = "Technical service";
+"ContactoViewController_Reclamaciones" = "Complaints";
+"ContactoViewController_Devoluciones" = "Returns";
+"ContactoViewController_Nuevos clientes" = "New Clients";
+"ContactoViewController_Recursos Humanos" = "Human Resources";
+"ContactoViewController_Ofertas de empleo" = "Job vacancies";
+"ContactoViewController_Denuncias" = "Denunciation";

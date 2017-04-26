@@ -50,5 +50,7 @@
 	<array>
 		<string>EURO6000</string>
 	</array>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Esta información en necesaria para mostrar su ubicación en el mapa</string>
 </dict>
 </plist>
