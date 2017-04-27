@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import LocalAuthentication
 
 protocol LoginDelegate: class {
     func usuarioAutenticado(estaAutenticado:Bool)
@@ -112,6 +113,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         registerKeyboardNotifications()
+        
+        solicitarReconocimientoDeHuella()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -155,6 +158,126 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
+    func solicitarReconocimientoDeHuella() {
+        let defaults = UserDefaults.standard
+        if true // defaults(forKey: "TOUCHID") as! Bool == true
+        {
+            // 1. Create a authentication context
+            let authenticationContext = LAContext()
+            var error:NSError?
+            
+            // 2. Check if the device has a fingerprint sensor
+            // If not, show the user an alert view and bail out!
+            guard authenticationContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) else {
+                
+                showAlertViewIfNoBiometricSensorHasBeenDetected()
+                return
+                
+            }
+            
+            // 3. Check the fingerprint
+            authenticationContext.evaluatePolicy(
+                .deviceOwnerAuthenticationWithBiometrics,
+                localizedReason: "Debe autentificarse para acceder a este servicio.",
+                reply: { [unowned self] (success, error) -> Void in
+                    
+                    if( success ) {
+                        // Fingerprint recognized
+                        // Go to view controller
+                        defaults.set(0, forKey: self.numIntentosKey)
+                        defaults.set("23423423523", forKey: "token")
+                        defaults.set("Walter White", forKey: "nombre")
+                        self.delegate?.usuarioAutenticado(estaAutenticado: true)
+                        
+                    }else {
+                        
+                        // Check if there is an error
+                        if let error = error {
+                            
+                            let message = self.errorMessageForLAErrorCode(error._code)
+                            if (!(LAError.Code.userCancel.rawValue == error._code) && !(LAError.Code.userFallback.rawValue == error._code) && !(LAError.Code.systemCancel.rawValue == error._code)){
+                                self.showAlertViewAfterEvaluatingPolicyWithMessage(message)
+                            }
+                        }
+                    }
+            })
+        }
+    }
+    
+    func errorMessageForLAErrorCode( _ errorCode:Int ) -> String{
+        
+        var message = ""
+        
+        
+        if #available(iOS 9.0, *) {
+            switch errorCode {
+                
+            case LAError.Code.appCancel.rawValue:
+                message = "Authentication was cancelled by application"
+                
+            case LAError.Code.authenticationFailed.rawValue:
+                message = "El usuario no pudo proporcionar credenciales válidas."
+                
+            case LAError.Code.invalidContext.rawValue:
+                message = "The context is invalid"
+                
+            case LAError.Code.passcodeNotSet.rawValue:
+                message = "Passcode is not set on the device"
+                
+            case LAError.Code.systemCancel.rawValue:
+                message = "Authentication was cancelled by the system"
+                
+            case LAError.Code.touchIDLockout.rawValue:
+                message = "Demasiados intentos fallidos."
+                
+            case LAError.Code.touchIDNotAvailable.rawValue:
+                message = "TouchID is not available on the device"
+                
+            case LAError.Code.userCancel.rawValue:
+                message = "The user did cancel"
+                
+            case LAError.Code.userFallback.rawValue:
+                message = "The user chose to use the fallback"
+                
+            default:
+                message = "Did not find error code on LAError object"
+                
+                
+            }
+        } else {
+            message = "Error indeterminado"
+        }
+        
+        return message
+        
+    }
+    
+    func showAlertViewAfterEvaluatingPolicyWithMessage( _ message:String ){
+        
+        showAlertWithTitle("Error", message: message)
+        
+    }
+    
+    func showAlertViewIfNoBiometricSensorHasBeenDetected(){
+        
+        showAlertWithTitle("Error", message: "Este dispositivo no dispone de TouchID.")
+        
+    }
+    
+    func showAlertWithTitle( _ title:String, message:String ) {
+        
+        let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        alertVC.addAction(okAction)
+        
+        DispatchQueue.main.async { () -> Void in
+            
+            self.present(alertVC, animated: true, completion: nil)
+            
+        }
+        
+    }
     
 }
 

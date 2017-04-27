@@ -116,6 +116,7 @@ class MenuViewController: UITableViewController, LoginDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
         controller.delegate = self
+        controller.modalPresentationStyle = UIModalPresentationStyle.formSheet
         self.present(controller, animated: true, completion: nil)
     }
     
