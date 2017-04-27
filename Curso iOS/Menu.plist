@@ -40,6 +40,8 @@
 		<key>menu</key>
 		<array>
 			<dict>
+				<key>segue</key>
+				<string>CuentasSegue</string>
 				<key>autenticado</key>
 				<true/>
 				<key>tipo</key>

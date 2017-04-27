@@ -19,11 +19,6 @@ class MenuLateralTableViewController: UITableViewController {
         self.clearsSelectionOnViewWillAppear = false
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.tableView.reloadData()
-    }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

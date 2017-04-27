@@ -11,11 +11,13 @@ import ENSwiftSideMenu
 
 class NavigationController: ENSideMenuNavigationController, ENSideMenuDelegate {
 
+    var tableView:MenuLateralTableViewController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let tableView = MenuLateralTableViewController(style: UITableViewStyle.grouped)
-        sideMenu = ENSideMenu(sourceView: self.view, menuViewController: tableView, menuPosition:.left)
+        tableView = MenuLateralTableViewController(style: UITableViewStyle.grouped)
+        sideMenu = ENSideMenu(sourceView: self.view, menuViewController: tableView!, menuPosition:.left)
         sideMenu?.delegate = self //optional
         sideMenu?.menuWidth = 250.0 // optional, default is 160
         //sideMenu?.bouncingEnabled = false
@@ -32,6 +34,7 @@ class NavigationController: ENSideMenuNavigationController, ENSideMenuDelegate {
     // MARK: - ENSideMenu Delegate
     func sideMenuWillOpen() {
         print("sideMenuWillOpen")
+        tableView?.tableView.reloadData()
     }
     
     func sideMenuWillClose() {

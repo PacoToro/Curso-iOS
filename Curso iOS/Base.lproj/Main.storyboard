@@ -225,6 +225,7 @@
                         <segue destination="ffN-zn-SDG" kind="presentation" identifier="abrirNavegadorSegue" modalTransitionStyle="crossDissolve" id="HA6-Zo-AtO"/>
                         <segue destination="DzK-wu-Wu8" kind="show" identifier="OficinasCajerosSegue" id="Kf8-gt-oju"/>
                         <segue destination="97r-pE-ijM" kind="show" identifier="ContactoSegue" id="oJy-Cg-IVu"/>
+                        <segue destination="ODu-YD-Qw7" kind="show" identifier="CuentasSegue" id="aAF-EJ-XKz"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NsN-Bj-DR4" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -249,6 +250,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XUb-9U-Qe9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="124" y="128"/>
+        </scene>
+        <!--Cuentas-->
+        <scene sceneID="mHP-yO-KbO">
+            <objects>
+                <viewController title="Cuentas" id="ODu-YD-Qw7" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="g2k-KX-3GV"/>
+                        <viewControllerLayoutGuide type="bottom" id="Aom-hn-GS6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Nf1-y1-5zO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oVz-40-vmJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2953" y="-1241"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="i9A-qR-KpW">
