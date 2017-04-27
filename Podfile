@@ -8,6 +8,7 @@ target 'Curso iOS DES' do
   # Pods for Curso iOS DES
   pod 'Firebase/Core'
   pod 'Firebase/Messaging'
+  pod 'ENSwiftSideMenu', '~> 0.1.1'
 
 end
 
@@ -18,5 +19,6 @@ target 'Curso iOS PRO' do
   # Pods for Curso iOS PRO
   pod 'Firebase/Core'
   pod 'Firebase/Messaging'
+  pod 'ENSwiftSideMenu', '~> 0.1.1'
 
 end

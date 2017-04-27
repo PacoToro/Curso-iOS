@@ -18,6 +18,17 @@ class MenuViewController: UITableViewController, LoginDelegate {
     @IBOutlet weak var btnDesconectar: UIBarButtonItem!
     
     override func viewDidLoad() {
+        
+        if navigationController?.viewControllers.count == 1 {
+            let btnMenu = UIButton(type: .custom)
+            btnMenu.setImage(UIImage(named: "burger"), for: .normal)
+            btnMenu.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+            btnMenu.addTarget(self, action: #selector(ocultarMostrarMenu), for: .touchUpInside)
+            let item = UIBarButtonItem(customView: btnMenu)
+            
+            self.navigationItem.setLeftBarButton(item, animated: true)
+        }
+            
         if menuArray.count == 0, let fileUrl = Bundle.main.url(forResource: "Menu", withExtension: "plist") {
             do {
                 let data = try Data(contentsOf: fileUrl)
@@ -26,6 +37,12 @@ class MenuViewController: UITableViewController, LoginDelegate {
                 print("ERROR: No se ha podido leer adecuadamente el fichero Menu.plist")
             }
         }
+    }
+        
+    
+    func ocultarMostrarMenu() {
+        print("OcultandoMostrando el Menu")
+        toggleSideMenuView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -136,6 +153,7 @@ class MenuViewController: UITableViewController, LoginDelegate {
         btnDesconectar.isEnabled = false
         let defaults = UserDefaults.standard
         defaults.removeObject(forKey: "token")
+        defaults.removeObject(forKey: "nombre")
         navigationController?.popToRootViewController(animated: true)
     }
 }

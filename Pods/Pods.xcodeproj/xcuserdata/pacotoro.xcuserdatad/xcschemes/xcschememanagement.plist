@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>ENSwiftSideMenu.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>GoogleToolboxForMac.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,22 +32,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>02D6F31EAF9801501A344C17E4B673B5</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>1E02547D072EE499B4B63E4DE950F858</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>6087740DFFFEF6BB449EAD09345A7385</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>C5B80060FE8C664DF08841000F41D515</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D4436AB6B8AB17157C39B0113950A743</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E1C1806B93D7F3F64ADC36CCFBBD7D87</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E4FA66605681F27FA470248470FAC178</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F1D3F075193E6A031499F73D4B6ED1C3</key>
 		<dict>
 			<key>primary</key>
 			<true/>

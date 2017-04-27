@@ -16,6 +16,10 @@
 		192FD1221EA67E1500BB14A7 /* DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192FD1211EA67E1500BB14A7 /* DAO.swift */; };
 		192FD1741EA91BCD00BB14A7 /* OficinasCarjerosTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192FD1731EA91BCC00BB14A7 /* OficinasCarjerosTabViewController.swift */; };
 		194203C91EB23FE10096E084 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 194203C81EB23FE10096E084 /* GoogleService-Info.plist */; };
+		194203CC1EB248130096E084 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194203CB1EB248130096E084 /* NavigationController.swift */; };
+		194203CD1EB248130096E084 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194203CB1EB248130096E084 /* NavigationController.swift */; };
+		194203CF1EB24BD10096E084 /* MenuLateralTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194203CE1EB24BD10096E084 /* MenuLateralTableViewController.swift */; };
+		194203D01EB24BD10096E084 /* MenuLateralTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194203CE1EB24BD10096E084 /* MenuLateralTableViewController.swift */; };
 		19576BC31EB108390089DF89 /* ContactoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192FD0F41EA6028F00BB14A7 /* ContactoCell.swift */; };
 		19576BC41EB108390089DF89 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D939E11E9E45BC007E76A9 /* Utils.swift */; };
 		19576BC51EB108390089DF89 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D939E31E9E5B3B007E76A9 /* WebViewController.swift */; };
@@ -62,6 +66,8 @@
 		192FD1731EA91BCC00BB14A7 /* OficinasCarjerosTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OficinasCarjerosTabViewController.swift; sourceTree = "<group>"; };
 		194203C81EB23FE10096E084 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		194203CA1EB2402B0096E084 /* !Curso iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "!Curso iOS.entitlements"; sourceTree = "<group>"; };
+		194203CB1EB248130096E084 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		194203CE1EB24BD10096E084 /* MenuLateralTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuLateralTableViewController.swift; sourceTree = "<group>"; };
 		19576BDB1EB108390089DF89 /* !Curso iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "!Curso iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		19576BDC1EB1083A0089DF89 /* Info.DES.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.DES.plist; path = "/Users/pacotoro/Desktop/Curso iOS Unicaja/Curso-iOS/Info.DES.plist"; sourceTree = "<absolute>"; };
 		19576BE01EB210360089DF89 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -117,6 +123,8 @@
 		192FD0F21EA6025300BB14A7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				194203CB1EB248130096E084 /* NavigationController.swift */,
+				194203CE1EB24BD10096E084 /* MenuLateralTableViewController.swift */,
 				19D939BA1E9CAE66007E76A9 /* LoginViewController.swift */,
 				19D939DB1E9E0F73007E76A9 /* MenuViewController.swift */,
 				19D939E31E9E5B3B007E76A9 /* WebViewController.swift */,
@@ -450,10 +458,12 @@
 				19576BC41EB108390089DF89 /* Utils.swift in Sources */,
 				19576BC51EB108390089DF89 /* WebViewController.swift in Sources */,
 				19576BC61EB108390089DF89 /* LoginViewController.swift in Sources */,
+				194203D01EB24BD10096E084 /* MenuLateralTableViewController.swift in Sources */,
 				19576BC71EB108390089DF89 /* MenuViewController.swift in Sources */,
 				19576BC81EB108390089DF89 /* OficinasCarjerosTabViewController.swift in Sources */,
 				19576BC91EB108390089DF89 /* OficinasCajerosViewController.swift in Sources */,
 				19576BCA1EB108390089DF89 /* ContactoViewController.swift in Sources */,
+				194203CD1EB248130096E084 /* NavigationController.swift in Sources */,
 				19576BCB1EB108390089DF89 /* Model.xcdatamodeld in Sources */,
 				19576BCC1EB108390089DF89 /* DAO.swift in Sources */,
 				19576BCD1EB108390089DF89 /* MenuCell.swift in Sources */,
@@ -469,10 +479,12 @@
 				19D939E21E9E45BC007E76A9 /* Utils.swift in Sources */,
 				19D939E41E9E5B3B007E76A9 /* WebViewController.swift in Sources */,
 				19D939BB1E9CAE66007E76A9 /* LoginViewController.swift in Sources */,
+				194203CF1EB24BD10096E084 /* MenuLateralTableViewController.swift in Sources */,
 				19D939DC1E9E0F73007E76A9 /* MenuViewController.swift in Sources */,
 				192FD1741EA91BCD00BB14A7 /* OficinasCarjerosTabViewController.swift in Sources */,
 				192FD0FA1EA66C1600BB14A7 /* OficinasCajerosViewController.swift in Sources */,
 				192FD0F11EA601F100BB14A7 /* ContactoViewController.swift in Sources */,
+				194203CC1EB248130096E084 /* NavigationController.swift in Sources */,
 				192FD0FF1EA674FA00BB14A7 /* Model.xcdatamodeld in Sources */,
 				192FD1221EA67E1500BB14A7 /* DAO.swift in Sources */,
 				19D939DE1E9E13FC007E76A9 /* MenuCell.swift in Sources */,
