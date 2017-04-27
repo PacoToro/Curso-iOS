@@ -1,0 +1,6 @@
+framework module Pods_Curso_iOS_DES {
+  umbrella header "Pods-Curso iOS DES-umbrella.h"
+
+  export *
+  module * { export * }
+}
