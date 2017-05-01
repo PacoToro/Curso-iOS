@@ -21,7 +21,6 @@ class MenuLateralTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,9 +44,10 @@ class MenuLateralTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
         case 0:
-            return "Datos personales"
+            return NSLocalizedString("MenuLateralTableViewController_Datos personales", comment: "")
+
         default:
-            return "Acerca de ..."
+            return NSLocalizedString("MenuLateralTableViewController_Acerca de ...", comment: "")
         }
     }
     
@@ -67,7 +67,7 @@ class MenuLateralTableViewController: UITableViewController {
                 cell!.textLabel?.text = "Nombre: Anónimo"
             }
         default:
-            cell!.textLabel?.text = "Copyright Unicaja 2017"
+            cell!.textLabel?.text = "Copyright Ingenia 2017"
         }
         
         return cell!

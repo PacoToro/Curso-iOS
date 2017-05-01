@@ -13,6 +13,7 @@
 "TextoComun_Información" = "Información";
 "TextoComun_Aviso" = "Aviso";
 "TextoComun_Error" = "Error";
+"TextoComun_En estos momentos no hay acceso a Internet." = "En estos momentos no hay acceso a Internet. Revise su conexión e inténtelo de nuevo.";
 
 "LoginViewController_Ha alcanzdo el número máximo..." = "Ha alcanzado el número máximo de intentos fallidos por lo que se ha bloqueado el acceso. Pongase en contacto con su oficina.";
 "LoginViewController_Acceso autorizado" = "Acceso autorizado";
@@ -35,4 +36,5 @@
 "ContactoViewController_Ofertas de empleo" = "Ofertas de empleo";
 "ContactoViewController_Denuncias" = "Denuncias";
 
-
+"MenuLateralTableViewController_Datos personales" = "Datos personales";
+"MenuLateralTableViewController_Acerca de ..." = "Acerca de ...";

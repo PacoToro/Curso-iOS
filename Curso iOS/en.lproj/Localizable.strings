@@ -13,6 +13,7 @@
 "TextoComun_Información" = "Information";
 "TextoComun_Aviso" = "Warning";
 "TextoComun_Error" = "Error";
+"TextoComun_En estos momentos no hay acceso a Internet." = "There is no Internet access at the moment. Please check your connection and try again.";
 
 "LoginViewController_Ha alcanzdo el número máximo..." = "You have reached the maximum number of failed attempts, so access has been blocked. Contact your office.";
 "LoginViewController_Acceso autorizado" = "Authorized access";
@@ -24,7 +25,6 @@
 "WebViewController_Se ha producido un error al cargar la página." = "There was an error loading the page.";
 
 "ContactoViewController_No es posible enviar correos en este momento. Configure una cuenta y vuelva a intentarlo." = "It is not possible to send emails at this time. Set up an account and try again.";
-
 "ContactoViewController_Consulta desde la App" = "Query from de App";
 "ContactoViewController_Hola, tengo la siguiente consulta: ..." =  "Hello, I have the following query: ...";
 "ContactoViewController_Atención al cliente" = "Customer Support";
@@ -35,3 +35,6 @@
 "ContactoViewController_Recursos Humanos" = "Human Resources";
 "ContactoViewController_Ofertas de empleo" = "Job vacancies";
 "ContactoViewController_Denuncias" = "Denunciation";
+
+"MenuLateralTableViewController_Datos personales" = "Personal Information";
+"MenuLateralTableViewController_Acerca de ..." = "About ...";

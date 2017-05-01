@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		009E80741EB73D8200E4DB0B /* Info.DES.plist in Resources */ = {isa = PBXBuildFile; fileRef = 009E80731EB73D8200E4DB0B /* Info.DES.plist */; };
 		192FD0F11EA601F100BB14A7 /* ContactoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192FD0F01EA601F100BB14A7 /* ContactoViewController.swift */; };
 		192FD0F51EA6028F00BB14A7 /* ContactoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192FD0F41EA6028F00BB14A7 /* ContactoCell.swift */; };
 		192FD0F81EA66AD300BB14A7 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 192FD0F71EA66AD200BB14A7 /* MapKit.framework */; };
@@ -56,6 +57,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		009E80731EB73D8200E4DB0B /* Info.DES.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.DES.plist; sourceTree = "<group>"; };
 		192FD0F01EA601F100BB14A7 /* ContactoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactoViewController.swift; sourceTree = "<group>"; };
 		192FD0F41EA6028F00BB14A7 /* ContactoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactoCell.swift; sourceTree = "<group>"; };
 		192FD0F71EA66AD200BB14A7 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -69,7 +71,6 @@
 		194203CB1EB248130096E084 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		194203CE1EB24BD10096E084 /* MenuLateralTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuLateralTableViewController.swift; sourceTree = "<group>"; };
 		19576BDB1EB108390089DF89 /* !Curso iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "!Curso iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		19576BDC1EB1083A0089DF89 /* Info.DES.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.DES.plist; path = "/Users/pacotoro/Desktop/Curso iOS Unicaja/Curso-iOS/Info.DES.plist"; sourceTree = "<absolute>"; };
 		19576BE01EB210360089DF89 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		19576BE41EB236110089DF89 /* Curso iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Curso iOS.entitlements"; sourceTree = "<group>"; };
 		19D939B51E9CAE66007E76A9 /* Curso iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Curso iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -215,7 +216,7 @@
 				19D939BF1E9CAE66007E76A9 /* Assets.xcassets */,
 				19D939C11E9CAE66007E76A9 /* LaunchScreen.storyboard */,
 				19D939C41E9CAE66007E76A9 /* Info.PRO.plist */,
-				19576BDC1EB1083A0089DF89 /* Info.DES.plist */,
+				009E80731EB73D8200E4DB0B /* Info.DES.plist */,
 				19D939D21E9D10C5007E76A9 /* Localizable.strings */,
 				19D939DF1E9E178A007E76A9 /* Menu.plist */,
 				192FD0FD1EA674FA00BB14A7 /* Model.xcdatamodeld */,
@@ -332,6 +333,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				009E80741EB73D8200E4DB0B /* Info.DES.plist in Resources */,
 				19576BD31EB108390089DF89 /* LaunchScreen.storyboard in Resources */,
 				19576BD41EB108390089DF89 /* Localizable.strings in Resources */,
 				19576BD51EB108390089DF89 /* Assets.xcassets in Resources */,

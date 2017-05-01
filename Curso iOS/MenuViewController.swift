@@ -152,8 +152,28 @@ class MenuViewController: UITableViewController, LoginDelegate {
     @IBAction func desconectar(_ sender: Any) {
         btnDesconectar.isEnabled = false
         let defaults = UserDefaults.standard
+        let token = defaults.value(forKey: "token")
         defaults.removeObject(forKey: "token")
         defaults.removeObject(forKey: "nombre")
         navigationController?.popToRootViewController(animated: true)
+        
+        guard Utils.isInternetAvailable() else {
+            print("No se ha podido intentar el login porque no hay acceso a Internet")
+            return
+        }
+        
+        if token != nil, let url = URL(string: "http://\(Utils.endPoint())/logout?token=\(token!)") {
+            
+            print("URL de Logout = \(url)")
+            
+            let request = NSMutableURLRequest(url: url)
+            request.httpMethod = "POST"
+            
+            let task = URLSession.shared.dataTask(with: request as URLRequest) { data, response, error in
+                // No hacemos nada con la respuesta porque estamos desconectando y nos da igual cual sea.
+            }
+            
+            task.resume()
+        }
     }
 }

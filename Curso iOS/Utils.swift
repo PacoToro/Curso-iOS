@@ -72,7 +72,7 @@ class Utils {
     }
 
     static func endPoint() -> String {
-        return entornoPRO() ? "ingenia.es" : "192.168.18.173"
+        return entornoPRO() ? "ingenia.es:8080/mibanco" : "192.168.1.123:8080/mibanco"
     }
     
 }

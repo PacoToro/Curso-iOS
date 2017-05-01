@@ -38,55 +38,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                          mensaje: NSLocalizedString("LoginViewController_Ha alcanzdo el número máximo...",
                                                     comment: ""))
         } else {
-            guard Utils.isInternetAvailable() else {
-                print("No se ha podido intentar el login porque no hay acceso a Internet")
-                return
-            }
-            
-            if let url = URL(string: "http://\(Utils.endPoint())/Login.json?usuario=\(txtIdentificador.text!)&clave=\(txtContraseña.text!)") {
-            
-                print("URL de Login = \(url)")
-                
-                let request = NSMutableURLRequest(url: url)
-                request.httpMethod = "GET"  // Cambiar a POST cuando el servicio sea de real
-                
-                let task = URLSession.shared.dataTask(with: request as URLRequest) { data, response, error in
-                    guard error == nil else {
-                        print(error!)
-                        return
-                    }
-                    guard let data = data else {
-                        print("Data is empty")
-                        return
-                    }
-                    
-                    do {
-                    
-                        let respuesta = try JSONSerialization.jsonObject(with: data, options: []) as! [String:Any]
-                        
-                        print(respuesta)
-                        
-                        if respuesta["responseCode"] as! Int == 0 {
-                            defaults.set(0, forKey: self.numIntentosKey)
-                            defaults.set(respuesta["token"], forKey: "token")
-                            defaults.set(respuesta["userName"], forKey: "nombre")
-                            self.delegate?.usuarioAutenticado(estaAutenticado: true)
-                        } else {
-                            self.muestraAviso(titulo: NSLocalizedString("TextoComun_Aviso", comment: ""),
-                                              mensaje: String(format: NSLocalizedString("LoginViewController_Las credenciales introducidas no son válidas.",
-                                                                                        comment: ""),
-                                                              self.maxNumIntentos - numIntentosConsumidos ))
-                            defaults.set(numIntentosConsumidos + 1, forKey: self.numIntentosKey)
-                        }
-                        
-                    } catch {
-                        print("Error al procesar el JSON")
-                    }
-                    
-                }
-                
-                task.resume()
-            }
+            realizaLogin(nif: txtIdentificador.text!, clave: txtContraseña.text!)
         }
     }
     
@@ -105,9 +57,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
 
     func muestraAviso(titulo:String, mensaje:String) {
-        let alert = UIAlertController(title: titulo, message: mensaje, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("TextoComun_Aceptar", comment: ""), style: UIAlertActionStyle.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
+        DispatchQueue.main.async {
+            let alert = UIAlertController(title: titulo, message: mensaje, preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("TextoComun_Aceptar", comment: ""), style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -182,13 +136,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 reply: { [unowned self] (success, error) -> Void in
                     
                     if( success ) {
-                        // Fingerprint recognized
-                        // Go to view controller
-                        defaults.set(0, forKey: self.numIntentosKey)
-                        defaults.set("23423423523", forKey: "token")
-                        defaults.set("Walter White", forKey: "nombre")
-                        self.delegate?.usuarioAutenticado(estaAutenticado: true)
-                        
+                        self.realizaLogin(nif: "11111111H", clave: nil)
                     }else {
                         
                         // Check if there is an error
@@ -277,6 +225,69 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             
         }
         
+    }
+    
+    func realizaLogin(nif:String, clave:String?) {
+        guard Utils.isInternetAvailable() else {
+            print("No se ha podido intentar el login porque no hay acceso a Internet")
+            self.muestraAviso(titulo: NSLocalizedString("TextoComun_Aviso", comment: ""),
+                              mensaje: NSLocalizedString("TextoComun_En estos momentos no hay acceso a Internet.", comment: ""))
+            return
+        }
+        
+        let url:URL?
+        if clave != nil {
+            url = URL(string: "http://\(Utils.endPoint())/login?nif=\(nif)&clave=\(clave!)")
+        } else {
+            url = URL(string: "http://\(Utils.endPoint())/login?nif=\(nif)&respuestaDesafio=DBpzB4FDhJS045Dfgs")
+        }
+        
+        if let url = url  {
+            
+            print("URL de Login = \(url)")
+            
+            let request = NSMutableURLRequest(url: url)
+            request.httpMethod = "POST"
+            
+            let task = URLSession.shared.dataTask(with: request as URLRequest) { data, response, error in
+                guard error == nil else {
+                    print(error!)
+                    return
+                }
+                guard let data = data else {
+                    print("Data is empty")
+                    return
+                }
+                
+                do {
+                    
+                    let respuesta = try JSONSerialization.jsonObject(with: data, options: []) as! [String:Any]
+                    
+                    print(respuesta)
+                    
+                    let defaults = UserDefaults.standard
+                    let numIntentosConsumidos = defaults.integer(forKey:self.numIntentosKey)
+                    if respuesta["resultado"] as! Bool {
+                        defaults.set(0, forKey: self.numIntentosKey)
+                        defaults.set(respuesta["token"], forKey: "token")
+                        defaults.set(respuesta["userName"], forKey: "nombre")
+                        self.delegate?.usuarioAutenticado(estaAutenticado: true)
+                    } else {
+                        self.muestraAviso(titulo: NSLocalizedString("TextoComun_Aviso", comment: ""),
+                                          mensaje: String(format: NSLocalizedString("LoginViewController_Las credenciales introducidas no son válidas.",
+                                                                                    comment: ""),
+                                                          self.maxNumIntentos - numIntentosConsumidos ))
+                        defaults.set(numIntentosConsumidos + 1, forKey: self.numIntentosKey)
+                    }
+                    
+                } catch {
+                    print("Error al procesar el JSON")
+                }
+                
+            }
+            
+            task.resume()
+        }
     }
     
 }
