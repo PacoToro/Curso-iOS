@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		008BC2DD1EC22A4C008514D7 /* Cajero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008BC2D91EC22A4C008514D7 /* Cajero.swift */; };
+		008BC2DE1EC22A4C008514D7 /* Cajero+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008BC2DA1EC22A4C008514D7 /* Cajero+CoreDataProperties.swift */; };
+		008BC2DF1EC22A4C008514D7 /* Oficina.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008BC2DB1EC22A4C008514D7 /* Oficina.swift */; };
+		008BC2E01EC22A4C008514D7 /* Oficina+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008BC2DC1EC22A4C008514D7 /* Oficina+CoreDataProperties.swift */; };
 		192FD0F11EA601F100BB14A7 /* ContactoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192FD0F01EA601F100BB14A7 /* ContactoViewController.swift */; };
 		192FD0F51EA6028F00BB14A7 /* ContactoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192FD0F41EA6028F00BB14A7 /* ContactoCell.swift */; };
 		192FD0F81EA66AD300BB14A7 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 192FD0F71EA66AD200BB14A7 /* MapKit.framework */; };
@@ -29,6 +33,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		008BC2D91EC22A4C008514D7 /* Cajero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cajero.swift; path = ../Cajero.swift; sourceTree = "<group>"; };
+		008BC2DA1EC22A4C008514D7 /* Cajero+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Cajero+CoreDataProperties.swift"; path = "../Cajero+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		008BC2DB1EC22A4C008514D7 /* Oficina.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Oficina.swift; path = ../Oficina.swift; sourceTree = "<group>"; };
+		008BC2DC1EC22A4C008514D7 /* Oficina+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Oficina+CoreDataProperties.swift"; path = "../Oficina+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		192FD0F01EA601F100BB14A7 /* ContactoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactoViewController.swift; sourceTree = "<group>"; };
 		192FD0F41EA6028F00BB14A7 /* ContactoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactoCell.swift; sourceTree = "<group>"; };
 		192FD0F71EA66AD200BB14A7 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -68,6 +76,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		008BC2E11EC22A5C008514D7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				008BC2D91EC22A4C008514D7 /* Cajero.swift */,
+				008BC2DA1EC22A4C008514D7 /* Cajero+CoreDataProperties.swift */,
+				008BC2DB1EC22A4C008514D7 /* Oficina.swift */,
+				008BC2DC1EC22A4C008514D7 /* Oficina+CoreDataProperties.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		192FD0F21EA6025300BB14A7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +138,7 @@
 		19D939B71E9CAE66007E76A9 /* Curso iOS */ = {
 			isa = PBXGroup;
 			children = (
+				008BC2E11EC22A5C008514D7 /* Model */,
 				192FD0F31EA6026A00BB14A7 /* Cells */,
 				192FD0F21EA6025300BB14A7 /* ViewControllers */,
 				19D939B81E9CAE66007E76A9 /* AppDelegate.swift */,
@@ -211,8 +231,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				008BC2DD1EC22A4C008514D7 /* Cajero.swift in Sources */,
+				008BC2DF1EC22A4C008514D7 /* Oficina.swift in Sources */,
 				192FD0F51EA6028F00BB14A7 /* ContactoCell.swift in Sources */,
 				19D939E21E9E45BC007E76A9 /* Utils.swift in Sources */,
+				008BC2DE1EC22A4C008514D7 /* Cajero+CoreDataProperties.swift in Sources */,
 				19D939E41E9E5B3B007E76A9 /* WebViewController.swift in Sources */,
 				19D939BB1E9CAE66007E76A9 /* LoginViewController.swift in Sources */,
 				19D939DC1E9E0F73007E76A9 /* MenuViewController.swift in Sources */,
@@ -222,6 +245,7 @@
 				192FD0FF1EA674FA00BB14A7 /* Model.xcdatamodeld in Sources */,
 				192FD1221EA67E1500BB14A7 /* DAO.swift in Sources */,
 				19D939DE1E9E13FC007E76A9 /* MenuCell.swift in Sources */,
+				008BC2E01EC22A4C008514D7 /* Oficina+CoreDataProperties.swift in Sources */,
 				19D939B91E9CAE66007E76A9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

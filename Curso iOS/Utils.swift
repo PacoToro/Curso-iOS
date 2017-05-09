@@ -64,7 +64,7 @@ class Utils {
     }
     
     static func endPoint() -> String {
-        return "192.168.18.173"
+        return "192.168.1.98"
     }
     
 }

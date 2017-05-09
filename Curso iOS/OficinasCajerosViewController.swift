@@ -19,6 +19,7 @@ enum tiposPOI: String {
 class OficinasCajerosViewController: UIViewController, MKMapViewDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var segTipoMapa: UISegmentedControl!
     
     var locationManager: CLLocationManager?
     var tipoPOI = tiposPOI.Oficina
@@ -32,7 +33,7 @@ class OficinasCajerosViewController: UIViewController, MKMapViewDelegate {
         locationManager?.requestWhenInUseAuthorization()
         
         mapView.showsUserLocation = true
-        mapView.delegate = self
+        mapView.delegate = self        
         
         mostarPOIsEnMapa()
         
@@ -61,6 +62,8 @@ class OficinasCajerosViewController: UIViewController, MKMapViewDelegate {
             let json = try! JSONSerialization.jsonObject(with: data, options: []) as! [[String:Any]]
 
             DAO.borrarPOIs(entityName: self.tipoPOI)
+            
+            self.mapView.removeAnnotations(self.mapView.annotations)
 
             for poi in json {
                 if self.tipoPOI == .Oficina {
@@ -72,11 +75,15 @@ class OficinasCajerosViewController: UIViewController, MKMapViewDelegate {
                                    mail: poi["mail"] as! String,
                                    telefono: poi["telefono"] as! String)
                 } else if self.tipoPOI == .Cajero {
+                    
+                    let oficina = DAO.obtenerOficina(codigo: poi["oficina"] as! Int)
+                    
                     DAO.guardarCajero(codigo: poi["codigo"] as! Int,
                                        direccion: poi["direccion"] as! String,
                                        estado: poi["estado"] as! String,
                                        latitud: poi["latitud"] as! Double,
-                                       longitud: poi["longitud"] as! Double)
+                                       longitud: poi["longitud"] as! Double,
+                                       oficina: oficina)
                 }
             }
             
@@ -113,5 +120,17 @@ class OficinasCajerosViewController: UIViewController, MKMapViewDelegate {
     func getContext () -> NSManagedObjectContext {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         return appDelegate.managedObjectContext
+    }
+    
+    @IBAction func cambioEnTipoMapa(sender: Any) {
+        print("Cambiando el tipo de mapa")
+        switch self.segTipoMapa.selectedSegmentIndex {
+        case 1:
+            mapView.mapType = .hybrid
+        case 2:
+            mapView.mapType = .satellite
+        default:
+            mapView.mapType = .standard
+        }        
     }
 }
