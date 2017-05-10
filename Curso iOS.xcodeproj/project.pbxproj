@@ -58,6 +58,7 @@
 
 /* Begin PBXFileReference section */
 		009E80731EB73D8200E4DB0B /* Info.DES.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.DES.plist; sourceTree = "<group>"; };
+		00EDA3B81EC39C31008090A7 /* Model 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Model 2.xcdatamodel"; sourceTree = "<group>"; };
 		192FD0F01EA601F100BB14A7 /* ContactoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactoViewController.swift; sourceTree = "<group>"; };
 		192FD0F41EA6028F00BB14A7 /* ContactoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactoCell.swift; sourceTree = "<group>"; };
 		192FD0F71EA66AD200BB14A7 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -727,9 +728,10 @@
 		192FD0FD1EA674FA00BB14A7 /* Model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				00EDA3B81EC39C31008090A7 /* Model 2.xcdatamodel */,
 				192FD0FE1EA674FA00BB14A7 /* Model.xcdatamodel */,
 			);
-			currentVersion = 192FD0FE1EA674FA00BB14A7 /* Model.xcdatamodel */;
+			currentVersion = 00EDA3B81EC39C31008090A7 /* Model 2.xcdatamodel */;
 			path = Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

@@ -45,8 +45,8 @@ class OficinasCajerosViewController: UIViewController, MKMapViewDelegate {
             print("No se ha podido actualizar los datos de Oficinas y Cajeros porque no hay acceso a Internet")
             return
         }
-        
-        let url = URL(string: "http://\(Utils.endPoint())/\(tipoPOI)s.json")
+        let endPointPOIs = Utils.endPoint().replacingOccurrences(of: ":8080/mibanco", with: "")
+        let url = URL(string: "http://\(endPointPOIs)/\(tipoPOI)s.json")
         
         let task = URLSession.shared.dataTask(with: url!) { data, response, error in
             guard error == nil else {
